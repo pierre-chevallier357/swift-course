@@ -1,4 +1,6 @@
 import UIKit
+import PlaygroundSupport;
+defer{ PlaygroundPage.current.finishExecution() }
 
 // -------------------//
 // MARK: -Exercice 1:
@@ -9,11 +11,14 @@ import UIKit
 //print(getWelcomeMessage(name: "Julie", age: 32)!)
 
 func getWelcomeMessage(name: String , age: Int)-> String {
-        return "Bievenue \(name) age: \(age)"
-    
+    return "Bienvenue \(name) \(age) ans"
 }
 
+print("=== Exercice 1 ===")
+print("getWelcomeMessage(name: 'Julie', age: 32)")
 print(getWelcomeMessage(name: "Julie", age: 32))
+print("")
+
 // -------------------//
 // MARK: -Exercice 2:
 // -------------------//
@@ -27,7 +32,6 @@ enum Operator {
 }
 
 func calcul(first: Int, second: Int, calcOperator: Operator) -> Int? {
-    
     switch calcOperator {
         case .addition:
             return first+second
@@ -38,15 +42,19 @@ func calcul(first: Int, second: Int, calcOperator: Operator) -> Int? {
         case .division:
             if second == 0 {
                 return nil
-            }
-            else {
+            } else {
                 return first/second
             }
     }
 }
 
+print("=== Exercice 2 ===")
+print("calcul(first: 10, second: 20, calcOperator: .addition) ?? 'ERR'")
 print(calcul(first: 10, second: 20, calcOperator: .addition) ?? "ERR")
+print("calcul(first: 8, second: 0, calcOperator: .division) ?? 'ERR'")
 print(calcul(first: 8, second: 0, calcOperator: .division) ?? "ERR")
+print("")
+
 // -------------------//
 // MARK: -Exercice 3:
 // -------------------//
@@ -59,16 +67,18 @@ func fibonacciSequence(n: Int, first: Int, second: Int){
     var first = first
     var second = second
     for _ in 1...n {
-
         counter = first+second
         first = second
         second = counter
     }
-    print( "res = \(counter)")
-    
+    print(counter)
 }
 
+print("=== Exercice 3 ===")
+print("fibonacciSequence(n: 7, first: 0, second: 1)")
 fibonacciSequence(n: 7, first: 0, second: 1)
+print("")
+
 // -------------------//
 // MARK: -Exercice 4:
 // -------------------//
